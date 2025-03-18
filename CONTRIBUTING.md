@@ -85,7 +85,7 @@ git clone http://gitlab.osmosys.co/incident-reporter/incident-reporter-api.git
 
 Before you submit your Merge Request (MR), consider the following guidelines:
 
-1. Search [GitLab Merge Requests][gl_mrs] for an open or closed MR to avoid duplicate efforts.
+1. Search [GitLab Merge Requests][gl_mrs] for an open or a closed Merge Request to avoid duplicate efforts.
 2. Clone this repository.
 3. Create a new git branch following the appropriate naming conventions:
    
@@ -121,18 +121,18 @@ Before you submit your Merge Request (MR), consider the following guidelines:
 12. Click New Merge Request.
 ![New Merge Request](1_NewMergeRequest.png)
 13. Select your source branch (e.g., feat/add-user).
-- ![Select Source Branch](2_SelectSourceBranch.png)
+![Select Source Branch](2_SelectSourceBranch.png)
 14. Select the target branch (Sprint-5.4.12 or another sprint branch).
-- ![Select Target Branch](3_SelectTargetBranch.png)
+![Select Target Branch](3_SelectTargetBranch.png)
 15. Fill in the Merge Request title:
-- ![Ensure Proper PR Title](4_EnsureProperPRTitle.png)
+![Ensure Proper PR Title](4_EnsureProperPRTitle.png)
 16. Ensure proper description with relevant details.
-- ![Ensure Proper Description](5_EnsureProperDescription.png)
+![Ensure Proper Description](5_EnsureProperDescription.png)
 16. Assign the Merge Request to yourself & Request for Code Review from a Reviewer.
-- ![Assign Reviewer](6_AssigneeReviewer.png)
+![Assign Reviewer](6_AssigneeReviewer.png)
 17. Check the Checkboxes: Squash Commits & Delete source branch after merge. 
-- ![Check Required Options](7_CheckTheseOptions.png)
-18. Click Submit Merge Request.
+![Check Required Options](7_CheckTheseOptions.png)
+18. Verify all the changes & Click Create Merge Request.
 19. Wait for code review and address any requested changes.
 
 - Make the required updates & push the code to gitlab branch.
@@ -153,14 +153,24 @@ Each commit message consists of a **header**, an optional **body**, and an optio
 <footer>
 ```
 
-- The **header** is mandatory.
+- The **header** is mandatory & must be in all lowercase.
+- The **body** & **footer** can have both uppercase & lowercase letters.
 - Each line should be under 100 characters.
 
 #### Examples
 
 ```
-docs: Update api response sheet
-fix: Modify permissions for user
+docs: update api response sheet
+fix: modify permissions for user
+```
+
+```
+feat: update auth token generation in helper class
+
+Updated the Implementation of JWT token generation in the JWTHelper class, including role-based claims.
+Updated token expiration and signing key handling for better security.
+
+Closes #123
 ```
 
 ### Reverting a Commit
@@ -190,7 +200,6 @@ This reverts commit <hash>.
 ### Commit Subject
 
 - Use the imperative, present tense ("change" not "changed").
-- Capitalize the first letter.
 - Do not end with a period (`.`).
 
 ### Commit Body
@@ -205,21 +214,21 @@ This reverts commit <hash>.
 ### Merge Request Title Format
 
 ```
-docs: Add API response document 
+docs: add request response document 
 ```
 
 ```
-fix: Fix ticket sorting bug 
+fix: fix ticket sorting bug 
 ```
 
 ```
-feat: Allow multiple owners for an organisation 
+feat: allow multiple owners for an organisation 
 ```
 
 ## Testing
 
 - Write unit tests for all new features and bug fixes.
-- Run tests locally before submitting an MR.
+- Run tests locally before submitting a Merge Request.
 - Ensure compatibility with `.NET Framework 4.5.2`.
 - Use local databases for DAL testing.
 
